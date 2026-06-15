@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Shield, Send } from 'lucide-react';
 
 const MESSENGER_LINK = "https://m.me/latoniolawoffice";

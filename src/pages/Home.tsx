@@ -29,11 +29,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex flex-col w-full bg-white">
         {/* Banner Image Area */}
-        <div className="w-full bg-slate-50 border-b border-slate-200 flex justify-center">
+        <div className="w-full bg-slate-100 border-b border-slate-200 flex justify-center">
           <img 
-            src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/public/Background.png" 
+            src="/Background.png" 
             alt="Latonio Law Office Banner" 
-            className="w-full h-auto object-cover max-h-[60vh] object-top brightness-110 contrast-105 shadow-inner"
+            className="w-full h-auto object-contain max-h-[70vh] shadow-inner"
           />
         </div>
         
