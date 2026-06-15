@@ -2,9 +2,9 @@ export default function LegalDisclaimer() {
   return (
     <div className="flex flex-col w-full bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <h1 className="text-4xl font-serif font-bold text-slate-900 mb-12">Legal Disclaimer</h1>
+        <h1 className="text-4xl font-serif font-bold text-gray-900 mb-12">Legal Disclaimer</h1>
         
-        <div className="prose prose-slate max-w-none text-slate-700 leading-loose font-light space-y-8">
+        <div className="prose prose-slate max-w-none text-gray-700 leading-loose font-light space-y-8">
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-3">1. No Attorney-Client Relationship</h2>
             <p>

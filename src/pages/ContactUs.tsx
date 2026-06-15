@@ -21,14 +21,14 @@ export default function ContactUs() {
           
           {/* Office Information Directory */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-8 font-serif">Office Directory</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 font-serif">Office Directory</h2>
             
             <div className="space-y-8">
               <div className="flex items-start">
                 <MapPin className="w-6 h-6 text-amber-700 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-1">Office Address</h3>
-                  <p className="text-slate-600">Your office address here</p>
+                  <p className="text-gray-600">827 J.M. Ceniza St., Looc, Mandaue City, Philippines, 6014</p>
                 </div>
               </div>
               
@@ -36,7 +36,7 @@ export default function ContactUs() {
                 <Phone className="w-6 h-6 text-amber-700 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-1">Phone Number</h3>
-                  <p className="text-slate-600">Your office contact number here</p>
+                  <p className="text-slate-600">0919 660 3976</p>
                 </div>
               </div>
               
@@ -44,7 +44,7 @@ export default function ContactUs() {
                 <Mail className="w-6 h-6 text-amber-700 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-1">Email Address</h3>
-                  <p className="text-slate-600">your contact email address here</p>
+                  <p className="text-slate-600">latoniolaw@gmail.com</p>
                 </div>
               </div>
 
@@ -52,7 +52,15 @@ export default function ContactUs() {
                 <Clock className="w-6 h-6 text-amber-700 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-1">Office Hours</h3>
-                  <p className="text-slate-600">Your office hours here</p>
+                  <dl className="text-slate-600 grid grid-cols-2 gap-x-4 gap-y-1 mt-2 text-sm">
+                    <dt>Monday</dt><dd>8:00 AM - 9:00 PM</dd>
+                    <dt>Tuesday</dt><dd>8:00 AM - 9:00 PM</dd>
+                    <dt>Wednesday</dt><dd>8:00 AM - 9:00 PM</dd>
+                    <dt>Thursday</dt><dd>8:00 AM - 9:00 PM</dd>
+                    <dt>Friday</dt><dd>8:00 AM - 9:00 PM</dd>
+                    <dt>Saturday</dt><dd>10:00 AM - 8:00 PM</dd>
+                    <dt>Sunday</dt><dd>10:00 AM - 8:00 PM</dd>
+                  </dl>
                 </div>
               </div>
             </div>
@@ -85,9 +93,9 @@ export default function ContactUs() {
                   href={FACEBOOK_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center px-6 py-4 text-base font-medium text-slate-700 transition-colors bg-white border border-slate-300 rounded shadow-sm hover:bg-slate-50"
+                  className="w-full flex items-center justify-center px-6 py-4 text-base font-medium text-gray-700 transition-colors bg-white border border-slate-300 rounded shadow-sm hover:bg-slate-50"
                 >
-                  <Facebook className="w-5 h-5 mr-3 text-slate-500" />
+                  <Facebook className="w-5 h-5 mr-3 text-gray-500" />
                   Visit Our Official Facebook Page
                 </a>
               </div>

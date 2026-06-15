@@ -2,9 +2,9 @@ export default function PrivacyPolicy() {
   return (
     <div className="flex flex-col w-full bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <h1 className="text-4xl font-serif font-bold text-slate-900 mb-12">Privacy Policy</h1>
+        <h1 className="text-4xl font-serif font-bold text-gray-900 mb-12">Privacy Policy</h1>
         
-        <div className="bg-slate-50 border-l-4 border-slate-400 p-6 mb-12 text-slate-700 italic font-medium">
+        <div className="bg-slate-50 border-l-4 border-slate-400 p-6 mb-12 text-gray-700 italic font-medium">
           The website does not intentionally collect confidential legal information through public submission forms.
         </div>
 

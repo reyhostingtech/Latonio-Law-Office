@@ -13,8 +13,8 @@ const PracticeArea: React.FC<PracticeAreaProps> = ({ icon, title, description })
       <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-full flex items-center justify-center mb-6 text-amber-700 group-hover:bg-amber-50 transition-colors">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-3">{title}</h3>
-      <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
+      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
     </div>
   );
 }

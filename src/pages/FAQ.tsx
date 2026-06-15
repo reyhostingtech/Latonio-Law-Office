@@ -32,9 +32,9 @@ export default function FAQ() {
     <div className="flex flex-col w-full bg-slate-50 min-h-screen">
       <div className="bg-white border-b border-slate-200 py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <HelpCircle className="w-12 h-12 text-slate-800 mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+          <HelpCircle className="w-12 h-12 text-gray-800 mx-auto mb-6" />
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
             General informational inquiries regarding our practice and consultation process.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function FAQ() {
                       <ChevronDownIcon
                         className={`${
                           open ? 'rotate-180 transform' : ''
-                        } h-5 w-5 text-slate-500 transition-transform`}
+                        } h-5 w-5 text-gray-500 transition-transform`}
                       />
                     </DisclosureButton>
                     <DisclosurePanel className="px-6 pb-5 pt-0 text-slate-600 leading-relaxed font-light">

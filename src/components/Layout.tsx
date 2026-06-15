@@ -39,12 +39,12 @@ export default function Layout() {
           <div className="flex justify-between items-center h-20">
             
             {/* Logo Area */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-slate-900 border border-amber-700 text-white flex items-center justify-center rounded-sm hover:bg-[#253d61] transition-colors shrink-0">
-                <span className="text-[8px] text-white text-center leading-tight uppercase font-bold">Law<br/>Office<br/>Logo</span>
+            <Link to="/" className="flex items-center space-x-3 md:space-x-4 group">
+              <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center shrink-0">
+                <img src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/lawofficeLogo.jpg" alt="Latonio Law Office Logo" className="object-contain h-full w-full rounded" />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-tight text-slate-900 leading-tight">
+                <span className="font-serif text-xl md:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
                   Latonio Law Office
                 </span>
               </div>
@@ -59,7 +59,7 @@ export default function Layout() {
                   className={`text-sm font-medium transition-colors hover:text-slate-900 pb-1 ${
                     location.pathname === link.path || (link.path === '/' && location.pathname === '/home')
                       ? 'text-slate-900 border-b-2 border-slate-900 font-semibold'
-                      : 'text-slate-600'
+                      : 'text-gray-600'
                   }`}
                 >
                   {link.label}
@@ -70,7 +70,7 @@ export default function Layout() {
                 href={MESSENGER_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-4 bg-slate-900 text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-widest hover:bg-[#253d61] transition-colors"
+                className="ml-4 bg-slate-900 text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-colors"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Message Us on Messenger
@@ -113,7 +113,7 @@ export default function Layout() {
                     className={`block px-3 py-3 text-base font-medium rounded-md ${
                       location.pathname === link.path || (link.path === '/' && location.pathname === '/home')
                         ? 'bg-slate-50 text-amber-700'
-                        : 'text-slate-700 hover:bg-slate-50 hover:text-amber-700'
+                        : 'text-gray-700 hover:bg-slate-50 hover:text-amber-700'
                     }`}
                   >
                     {link.label}
@@ -154,15 +154,15 @@ export default function Layout() {
       </a>
 
       {/* Footer */}
-      <footer className="bg-[#152238] text-white py-12 border-t border-amber-700">
+      <footer className="bg-slate-900 text-white py-12 border-t border-amber-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
             
             {/* Branding Column */}
             <div className="col-span-1 md:col-span-2">
               <Link to="/" className="flex items-center space-x-3 mb-6 inline-flex">
-                 <div className="w-10 h-10 bg-slate-800 text-white flex items-center justify-center rounded">
-                  <Scale className="w-6 h-6" />
+                 <div className="w-12 h-12 flex items-center justify-center rounded shrink-0 bg-white">
+                  <img src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/lawofficeLogo.jpg" alt="Latonio Law Office Logo" className="object-contain h-full w-full rounded" />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-serif text-xl font-bold text-white leading-tight">
@@ -233,7 +233,7 @@ export default function Layout() {
 
           <div className="mt-12 pt-8 border-t border-slate-800">
             <div className="flex flex-col space-y-4">
-              <p className="text-xs text-slate-500 text-center md:text-left leading-relaxed">
+              <p className="text-xs text-gray-500 text-center md:text-left leading-relaxed">
                 <strong className="text-slate-400 font-medium">Attorney Advertising / Legal Information Disclaimer:</strong> Prior results do not guarantee a similar outcome. Information contained herein is for informational purposes only and does not constitute legal advice.
               </p>
               <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs text-slate-500">

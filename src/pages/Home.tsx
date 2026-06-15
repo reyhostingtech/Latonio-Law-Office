@@ -27,49 +27,57 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 w-full overflow-hidden">
-        {/* Background Overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#C5A059_1px,_transparent_1px)] bg-[size:24px_24px]"></div>
+      <section className="flex flex-col w-full bg-white">
+        {/* Banner Image Area */}
+        <div 
+          className="relative w-full bg-white border-b border-slate-200"
+          style={{ 
+            backgroundImage: "url('https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/Background.png')", 
+            backgroundSize: 'contain', 
+            backgroundPosition: 'center', 
+            backgroundRepeat: 'no-repeat',
+            minHeight: '45vh'
+          }}
+        >
+        </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+        {/* Content Area - Completely separate to avoid overlap */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6 font-medium">
-              Trusted Legal Counsel with Integrity, Professionalism, and Commitment
+            <h1 className="text-3xl md:text-5xl font-serif text-[#000000] leading-tight mb-4 font-bold">
+              Conscientious Legal Service
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl font-light">
+            <p className="text-md md:text-lg text-[#111111] leading-relaxed mb-8 font-medium max-w-2xl mx-auto">
               Providing reliable legal guidance and representation with professionalism, discretion, and dedication to justice.
             </p>
             
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            {/* Button Layout: Below text block, no overlap */}
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a
                 href={MESSENGER_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-700 text-slate-900 px-8 py-4 rounded font-bold text-sm uppercase tracking-wider hover:bg-amber-500 transition-all flex items-center justify-center"
+                className="bg-amber-700 text-white px-8 py-4 rounded font-bold text-sm uppercase tracking-wider hover:bg-amber-800 transition-all flex items-center justify-center shadow-md w-full sm:w-auto"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Message Us on Messenger
+                <MessageCircle className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span>Message Us on Messenger</span>
               </a>
               <a
                 href={FACEBOOK_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white/30 text-white px-8 py-4 rounded font-bold text-sm uppercase tracking-wider hover:bg-white/10 transition-all flex items-center justify-center"
+                className="bg-[#1A1A1A] text-white px-8 py-4 rounded font-bold text-sm uppercase tracking-wider hover:bg-black transition-all flex items-center justify-center shadow-md w-full sm:w-auto"
               >
-                <Facebook className="w-5 h-5 mr-2" />
-                Visit Our Facebook Page
+                <Facebook className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span>Visit Our Facebook Page</span>
               </a>
             </div>
           </motion.div>
-        </div>
-        {/* Decorative Column from Theme */}
-        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-slate-800 to-transparent opacity-40 hidden lg:flex items-center justify-center pointer-events-none">
-          <div className="w-[1px] h-64 bg-amber-700"></div>
         </div>
       </section>
 
@@ -80,7 +88,7 @@ export default function Home() {
             <h2 className="text-amber-700 font-bold text-xs uppercase tracking-[0.2em] mb-4">Our Philosophy</h2>
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Why Choose Our Firm</h3>
             <div className="w-16 h-1 bg-amber-700 mx-auto opacity-50 mb-6"></div>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed">
               We are defined by our ethical legal practice and unwavering commitment to securing the best lawful outcomes for our clients, handled with absolute professionalism and discretion.
             </p>
           </div>
@@ -128,7 +136,7 @@ export default function Home() {
             {['Civil Law', 'Criminal Defense', 'Family Law', 'Labor & Employment'].map((area, idx) => (
               <Link key={idx} to="/practice-areas" className="group bg-white border border-slate-200 p-6 rounded-lg hover:border-amber-700 hover:shadow-md transition-all">
                 <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors mb-2">{area}</h4>
-                <p className="text-sm text-slate-500 mb-4 line-clamp-2">Comprehensive legal services dedicated to protecting your rights and corporate interests.</p>
+                <p className="text-sm text-gray-500 mb-4 line-clamp-2">Comprehensive legal services dedicated to protecting your rights and corporate interests.</p>
                 <span className="text-xs font-semibold text-slate-400 group-hover:text-amber-700 inline-flex items-center uppercase tracking-wider">
                   Learn More <ChevronRight className="w-3 h-3 ml-1" />
                 </span>
