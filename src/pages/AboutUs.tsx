@@ -4,10 +4,10 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col w-full bg-white">
       {/* Page Header */}
-      <div className="bg-slate-50 border-b border-slate-200 py-16 md:py-24">
+      <div className="border-b border-slate-200 py-16 md:py-24" style={{ backgroundColor: '#78938a' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">About Our Firm</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">About Our Firm</h1>
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
             A tradition of professional excellence, rigorous advocacy, and ethical integrity.
           </p>
         </div>

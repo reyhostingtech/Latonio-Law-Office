@@ -40,8 +40,8 @@ export default function Layout() {
             
             {/* Logo Area */}
             <Link to="/" className="flex items-center space-x-3 md:space-x-4 group">
-              <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center shrink-0">
-                <img src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/lawofficeLogo.jpg" alt="Latonio Law Office Logo" className="object-contain h-full w-full rounded" />
+               <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center shrink-0 drop-shadow-md bg-white rounded">
+                <img src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/public/lawofficeLogo.jpg" alt="Latonio Law Office Logo" className="object-contain h-full w-full rounded brightness-105 contrast-105 mix-blend-multiply" />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-xl md:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
@@ -161,8 +161,8 @@ export default function Layout() {
             {/* Branding Column */}
             <div className="col-span-1 md:col-span-2">
               <Link to="/" className="flex items-center space-x-3 mb-6 inline-flex">
-                 <div className="w-12 h-12 flex items-center justify-center rounded shrink-0 bg-white">
-                  <img src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/lawofficeLogo.jpg" alt="Latonio Law Office Logo" className="object-contain h-full w-full rounded" />
+                 <div className="w-12 h-12 flex items-center justify-center rounded shrink-0 bg-white drop-shadow-md">
+                  <img src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/public/lawofficeLogo.jpg" alt="Latonio Law Office Logo" className="object-contain h-full w-full rounded brightness-105 contrast-105 mix-blend-multiply" />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-serif text-xl font-bold text-white leading-tight">

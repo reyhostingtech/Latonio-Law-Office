@@ -1,7 +1,165 @@
-import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Shield } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Shield, Send } from 'lucide-react';
 
 const MESSENGER_LINK = "https://m.me/latoniolawoffice";
 const FACEBOOK_LINK = "https://www.facebook.com/latoniolawoffice";
+
+const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSuccess(false);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      fullName: formData.get('fullName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      contactMethod: formData.get('contactMethod'),
+      matterType: formData.get('matterType'),
+      subject: formData.get('subject'),
+      concern: formData.get('concern'),
+      bestTime: formData.get('bestTime'),
+      urgency: formData.get('urgency'),
+    };
+
+    const emailSubject = `New Legal Inquiry - ${data.matterType} - ${data.fullName}`;
+    const emailBody = `Full Name: ${data.fullName}
+Email Address: ${data.email}
+Phone Number: ${data.phone}
+Preferred Contact Method: ${data.contactMethod}
+Legal Matter Type: ${data.matterType}
+Subject: ${data.subject}
+Urgency: ${data.urgency}
+Best Time to Contact: ${data.bestTime || 'Not specified'}
+
+Description of Concern:
+${data.concern}`;
+
+    const mailtoLink = `mailto:latoniolaw@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+      setIsSubmitting(false);
+      setSuccess(true);
+      (e.target as HTMLFormElement).reset();
+    }, 600);
+  };
+
+  return (
+    <div className="bg-white border border-slate-200 shadow-md rounded-lg p-8 md:p-12 mb-20 max-w-4xl mx-auto mt-16">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-serif font-bold text-slate-900 mb-3">Request Legal Consultation</h2>
+        <p className="text-slate-600">Complete the form below and our legal team will contact you as soon as possible.</p>
+      </div>
+
+      {success && (
+        <div className="mb-8 p-4 bg-green-50 border border-green-200 text-green-800 rounded flex items-start">
+          <div className="ml-3">
+            <h3 className="text-sm font-medium">Request form ready</h3>
+            <div className="mt-1 text-sm text-green-700">
+              <p>Your default email client should open shortly with your inquiry details. Please send the drafted email to complete your request.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
+            <input required type="text" id="fullName" name="fullName" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition" />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address *</label>
+            <input required type="email" id="email" name="email" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition" />
+          </div>
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number *</label>
+            <input required type="tel" id="phone" name="phone" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition" />
+          </div>
+          <div>
+            <label htmlFor="contactMethod" className="block text-sm font-medium text-slate-700 mb-1">Preferred Contact Method *</label>
+            <select required id="contactMethod" name="contactMethod" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition bg-white">
+              <option value="">Select a method...</option>
+              <option value="Phone Call">Phone Call</option>
+              <option value="Email">Email</option>
+              <option value="SMS">SMS</option>
+            </select>
+          </div>
+        </div>
+
+        <hr className="border-slate-100" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="matterType" className="block text-sm font-medium text-slate-700 mb-1">Legal Matter Type *</label>
+            <select required id="matterType" name="matterType" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition bg-white">
+              <option value="">Select matter type...</option>
+              <option value="Family Law">Family Law</option>
+              <option value="Labor Law">Labor Law</option>
+              <option value="Criminal Defense">Criminal Defense</option>
+              <option value="Civil Litigation">Civil Litigation</option>
+              <option value="Property/Real Estate">Property/Real Estate</option>
+              <option value="Immigration">Immigration</option>
+              <option value="Business Law">Business Law</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="urgency" className="block text-sm font-medium text-slate-700 mb-1">Urgency Level *</label>
+            <select required id="urgency" name="urgency" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition bg-white">
+              <option value="">Select urgency...</option>
+              <option value="Standard">Standard</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+          <div className="md:col-span-2">
+            <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-1">Subject of Inquiry *</label>
+            <input required type="text" id="subject" name="subject" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition" />
+          </div>
+          <div className="md:col-span-2">
+            <label htmlFor="concern" className="block text-sm font-medium text-slate-700 mb-1">Brief Description of Concern *</label>
+            <textarea required id="concern" name="concern" rows={5} className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition resize-y"></textarea>
+          </div>
+          <div className="md:col-span-2">
+            <label htmlFor="bestTime" className="block text-sm font-medium text-slate-700 mb-1">Best Time to Contact (Optional)</label>
+            <input type="text" id="bestTime" name="bestTime" placeholder="e.g. Weekdays after 5 PM" className="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-700 focus:border-amber-700 outline-none transition" />
+          </div>
+        </div>
+
+        <div className="bg-slate-50 p-4 border border-slate-200 rounded">
+          <label className="flex items-start cursor-pointer">
+            <input required type="checkbox" name="consent" className="mt-1 h-4 w-4 text-amber-700 focus:ring-amber-700 border-gray-300 rounded cursor-pointer" />
+            <span className="ml-3 text-sm text-slate-600">
+              I understand that submitting this form does not create an attorney-client relationship and I agree not to submit highly confidential information through this form.
+            </span>
+          </label>
+        </div>
+
+        <div className="pt-2">
+          <button 
+            type="submit" 
+            disabled={isSubmitting}
+            className="w-full md:w-auto px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded shadow-md transition-colors flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <span>Preparing Request...</span>
+            ) : (
+              <>
+                <Send className="w-5 h-5 mr-2" />
+                <span>Request Consultation</span>
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default function ContactUs() {
   return (
@@ -102,6 +260,11 @@ export default function ContactUs() {
             </div>
           </div>
 
+        </div>
+
+        {/* Contact Form Container */}
+        <div className="mt-12 w-full px-4 md:px-0">
+          <ContactForm />
         </div>
       </div>
     </div>

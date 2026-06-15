@@ -29,16 +29,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex flex-col w-full bg-white">
         {/* Banner Image Area */}
-        <div 
-          className="relative w-full bg-white border-b border-slate-200"
-          style={{ 
-            backgroundImage: "url('https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/Background.png')", 
-            backgroundSize: 'contain', 
-            backgroundPosition: 'center', 
-            backgroundRepeat: 'no-repeat',
-            minHeight: '45vh'
-          }}
-        >
+        <div className="w-full bg-slate-50 border-b border-slate-200 flex justify-center">
+          <img 
+            src="https://raw.githubusercontent.com/reyhostingtech/Latonio-Law-Office/main/public/Background.png" 
+            alt="Latonio Law Office Banner" 
+            className="w-full h-auto object-cover max-h-[60vh] object-top brightness-110 contrast-105 shadow-inner"
+          />
         </div>
         
         {/* Content Area - Completely separate to avoid overlap */}
