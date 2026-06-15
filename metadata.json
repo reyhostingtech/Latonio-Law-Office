@@ -1,0 +1,6 @@
+{
+  "name": "Latonio Law Office",
+  "description": "Professional, formal, and secure law office website for Latonio Law Office.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
